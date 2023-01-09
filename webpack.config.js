@@ -8,6 +8,9 @@ module.exports = {
   entry: {
     main: "./src/index.js",
   },
+  resolve: {
+    extensions: [".js", ".jsx"],
+  },
   output: {
     path: path.join(__dirname, "build"),
     filename: "[name].js",
@@ -19,7 +22,7 @@ module.exports = {
         test: /\.css$/,
         use: ["style-loader", "css-loader"],
       },
-      { test: /\.js$/, loader: "babel-loader", exclude: /node_modules/ },
+      { test: /\.(js|jsx)$/, loader: "babel-loader", exclude: /node_modules/ },
       {
         test: /\.jpg$/,
         use: [
