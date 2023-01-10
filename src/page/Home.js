@@ -14,8 +14,8 @@ const Home = () => {
         <MainImg />
         <SearchInput />
         <PopularCardListContainer />
-        <Footer />
       </main>
+      <Footer />
     </div>
   );
 };
