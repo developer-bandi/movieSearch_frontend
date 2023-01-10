@@ -1,0 +1,24 @@
+.mainBlock {
+  width: 100%;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.subBlock {
+  width: 1200px;
+  margin: auto;
+}
+
+.logoBlock {
+  display: flex;
+  padding: 15px 0;
+}
+
+.logoIcon {
+  height: 30px;
+  margin: 0 10px 0 0;
+}
+
+.logoWord {
+  font-size: 28px;
+  font-weight: 800;
+}
