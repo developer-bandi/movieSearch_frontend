@@ -1,0 +1,64 @@
+.mainBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 50px 0;
+  width: 100%;
+}
+
+@keyframes skeleton-gradient {
+  0% {
+    background-color: rgba(165, 165, 165, 0.2);
+  }
+
+  50% {
+    background-color: rgba(165, 165, 165, 0.4);
+  }
+
+  100% {
+    background-color: rgba(165, 165, 165, 0.2);
+  }
+}
+
+.loadingPosterBlock {
+  display: flex;
+  gap: 30px;
+  width: 1200px;
+  margin: auto;
+}
+
+.loadingPoster {
+  width: 150px;
+  height: 200px;
+  border-radius: 15px;
+  background-color: #eaeaea;
+  animation: skeleton-gradient 1.8s infinite ease-in-out;
+}
+
+.loadingInfoBlock {
+  padding: 10px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.loadingTitle {
+  width: 180px;
+  height: 22px;
+  background-color: #eaeaea;
+  animation: skeleton-gradient 1.8s infinite ease-in-out;
+}
+
+.loadingElseInfo {
+  width: 120px;
+  height: 22px;
+  background-color: #eaeaea;
+  animation: skeleton-gradient 1.8s infinite ease-in-out;
+}
+
+.error {
+  font-size: 40px;
+  font-weight: 600;
+  margin: auto;
+  height: 600px;
+}
