@@ -1,0 +1,40 @@
+.mainBlock {
+  width: 100%;
+  border-top: 1px solid #eaeaea;
+}
+
+.subBlock {
+  width: 1160px;
+  margin: auto;
+  display: flex;
+  padding: 20px;
+  font-size: 12px;
+  color: #7e7e7e;
+}
+
+.infoBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex-grow: 1;
+}
+
+.logoBlock {
+  display: flex;
+}
+
+.logoIcon {
+  height: 30px;
+  margin: 0 10px 0 0;
+}
+
+.logoWord {
+  font-size: 28px;
+  font-weight: 800;
+  color: black;
+}
+
+.contactBlock {
+  display: flex;
+  align-items: flex-end;
+}
