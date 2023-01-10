@@ -1,0 +1,40 @@
+.pageButtonList {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.pageButton {
+  width: 27px;
+  height: 27px;
+  font-size: 12px;
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pageButton:hover {
+  border: 1px solid #a0a0a0;
+}
+
+.selected {
+  background-color: #00aaff;
+  border: 1px solid #00aaff;
+  color: white;
+}
+
+.pageIcon {
+  width: 15px;
+  height: 27px;
+  font-size: 27px;
+  cursor: pointer;
+}
+
+.ban {
+  cursor: not-allowed;
+  opacity: 0.2;
+}
