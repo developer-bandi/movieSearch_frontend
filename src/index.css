@@ -3,7 +3,7 @@ body {
 }
 a {
   text-decoration: none;
-  color: black;
+  color: unset;
 }
 ul {
   list-style: none;
@@ -13,4 +13,8 @@ ul {
 button {
   border: none;
   background-color: white;
+}
+
+p {
+  margin: 0;
 }
