@@ -31,7 +31,7 @@ const Footer = () => {
         </div>
         <div class={styles.contactBlock}>
           <a target="_black" href="https://github.com/puki4416">
-            <img class={styles.icon} src="/github.png"></img>
+            <img class={styles.icon} src="/github.png" alt="깃허브 로고"></img>
           </a>
         </div>
       </div>

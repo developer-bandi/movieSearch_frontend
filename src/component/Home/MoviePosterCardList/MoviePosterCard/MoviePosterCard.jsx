@@ -9,7 +9,7 @@ const MoviePosterCard = ({ card }) => {
       <img
         class={styles.img}
         src={`https://image.tmdb.org/t/p/w500${card.posterPath}`}
-        alt="poster"
+        alt={`영화 ${card.title} 포스터`}
       ></img>
       <div class={styles.order}>{card.order}</div>
       <div class={styles.voteAverage}>평점 {card.voteAverage}</div>

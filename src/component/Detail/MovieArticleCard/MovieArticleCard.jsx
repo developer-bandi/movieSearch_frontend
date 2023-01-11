@@ -54,6 +54,7 @@ const MovieArticleCard = ({ movieInfo }) => {
               ? `https://image.tmdb.org/t/p/w500${posterPath}`
               : "./nullmovie.webp"
           }
+          alt={`영화 ${title} 포스터`}
         ></img>
         <div class={styles.infoBlock}>
           <div class={styles.title}>{title}</div>
