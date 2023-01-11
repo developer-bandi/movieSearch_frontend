@@ -5,7 +5,7 @@ import styles from "./PopularCard.module.css";
 
 const PopularCard = ({ card }) => {
   return (
-    <Link class={styles.mainBlock} href={`/detail/${card.id}`}>
+    <article class={styles.mainBlock}>
       <img
         class={styles.img}
         src={`https://image.tmdb.org/t/p/w500${card.posterPath}`}
@@ -13,9 +13,11 @@ const PopularCard = ({ card }) => {
       ></img>
       <div class={styles.order}>{card.order}</div>
       <div class={styles.voteAverage}>평점 {card.voteAverage}</div>
-      <div class={styles.overview}>{card.overview}</div>
+      <Link class={styles.overview} href={`/detail/${card.id}`}>
+        {card.overview}
+      </Link>
       <div class={styles.title}>{card.title}</div>
-    </Link>
+    </article>
   );
 };
 
