@@ -1,6 +1,7 @@
 /** @jsx h */
 import h, { useLookup } from "../../../../lib/react";
 import { useRouter } from "../../../../lib/react-router-dom";
+import SearchInput from "./SearchInput";
 
 const SearchInputContainer = () => {
   const router = useRouter();
