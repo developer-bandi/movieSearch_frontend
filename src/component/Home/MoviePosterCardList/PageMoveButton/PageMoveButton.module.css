@@ -1,0 +1,15 @@
+.mainBlock {
+  position: relative;
+  top: 129px;
+  width: 30px;
+}
+
+.button {
+  width: 40px;
+  height: 40px;
+  font-size: 35px;
+}
+
+.button:hover {
+  opacity: 0.6;
+}

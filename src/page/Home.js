@@ -2,8 +2,8 @@
 import h from "../../lib/react";
 import Footer from "../component/common/Footer/Footer";
 import Header from "../component/common/Header/Header";
-import MainImg from "../component/Home/MainImg/MainImg";
-import PopularCardListContainer from "../component/Home/PopularCardList/PopularCardListContainer";
+import IntroduceImg from "../component/Home/IntroduceImg/IntroduceImg";
+import MoviePosterCardListContainer from "../component/Home/MoviePosterCardList/MoviePosterCardListContainer";
 import SearchInput from "../component/Home/SearchInput/SearchInput";
 
 const Home = () => {
@@ -11,9 +11,9 @@ const Home = () => {
     <div>
       <Header />
       <main>
-        <MainImg />
+        <IntroduceImg />
         <SearchInput />
-        <PopularCardListContainer />
+        <MoviePosterCardListContainer />
       </main>
       <Footer />
     </div>

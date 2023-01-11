@@ -1,9 +1,9 @@
 /** @jsx h */
 import h from "../../../../../lib/react";
 import { Link } from "../../../../../lib/react-router-dom";
-import styles from "./PopularCard.module.css";
+import styles from "./MoviePosterCard.module.css";
 
-const PopularCard = ({ card }) => {
+const MoviePosterCard = ({ card }) => {
   return (
     <article class={styles.mainBlock}>
       <img
@@ -21,4 +21,4 @@ const PopularCard = ({ card }) => {
   );
 };
 
-export default PopularCard;
+export default MoviePosterCard;

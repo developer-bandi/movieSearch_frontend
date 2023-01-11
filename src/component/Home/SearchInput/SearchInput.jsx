@@ -1,11 +1,8 @@
 /** @jsx h */
-import h, { useLookup } from "../../../../lib/react";
-import { useRouter } from "../../../../lib/react-router-dom";
+import h from "../../../../lib/react";
 import styles from "./SearchInput.module.css";
 
-const SearchInput = () => {
-  const router = useRouter();
-  const lookup = useLookup();
+const SearchInput = ({ searchMovie }) => {
   return (
     <div class={styles.mainBlock}>
       <div class={styles.inputBlock}>
@@ -14,12 +11,7 @@ const SearchInput = () => {
           class={styles.input}
           placeholder="원하는 영화를 검색해보세요"
         ></input>
-        <button
-          class={styles.button}
-          onClick={() => {
-            router.push(`/result?keyword=${lookup("search").value}&page=1`);
-          }}
-        >
+        <button class={styles.button} onClick={searchMovie}>
           검색
         </button>
       </div>

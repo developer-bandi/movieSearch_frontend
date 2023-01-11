@@ -1,9 +1,9 @@
 /** @jsx h */
 import h, { useState, useEffect } from "../../../../lib/react";
 import { useDispatch, useSelector } from "../../../../lib/react-redux";
-import PopularCardList from "./PopularCardList";
+import MoviePosterCardList from "./MoviePosterCardList";
 
-const PopularCardListContainer = () => {
+const MoviePosterCardListContainer = () => {
   const page = useSelector((store) => store.mainPosterPage.page);
   const dispatch = useDispatch();
   const [cardList, setCardList] = useState({ loading: true, error: false });
@@ -24,8 +24,12 @@ const PopularCardListContainer = () => {
     dispatch("mainPosterPage", { type: direction });
   };
   return (
-    <PopularCardList cardList={cardList} page={page} changePage={changePage} />
+    <MoviePosterCardList
+      cardList={cardList}
+      page={page}
+      changePage={changePage}
+    />
   );
 };
 
-export default PopularCardListContainer;
+export default MoviePosterCardListContainer;

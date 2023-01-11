@@ -35,29 +35,3 @@
   display: flex;
   align-items: center;
 }
-
-.buttonBlock {
-  position: relative;
-  top: 129px;
-  width: 30px;
-}
-
-.button {
-  display: block;
-  width: 25px;
-  height: 25px;
-  border-left: 5px solid black;
-  border-top: 5px solid black;
-}
-
-.button:hover {
-  opacity: 0.6;
-}
-
-.leftButton {
-  transform: rotate(-45deg);
-}
-
-.rightButton {
-  transform: rotate(135deg);
-}
