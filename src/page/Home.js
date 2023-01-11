@@ -4,7 +4,7 @@ import Footer from "../component/common/Footer/Footer";
 import Header from "../component/common/Header/Header";
 import IntroduceImg from "../component/Home/IntroduceImg/IntroduceImg";
 import MoviePosterCardListContainer from "../component/Home/MoviePosterCardList/MoviePosterCardListContainer";
-import SearchInput from "../component/Home/SearchInput/SearchInput";
+import SearchInputContainer from "../component/Home/SearchInput/SearchInputContainer";
 
 const Home = () => {
   return (
@@ -12,7 +12,7 @@ const Home = () => {
       <Header />
       <main>
         <IntroduceImg />
-        <SearchInput />
+        <SearchInputContainer />
         <MoviePosterCardListContainer />
       </main>
       <Footer />
