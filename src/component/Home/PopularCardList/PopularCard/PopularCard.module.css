@@ -59,7 +59,7 @@
   top: -10px;
 }
 
-.mainBlock:hover > .summary {
+.mainBlock:hover > .overview {
   visibility: visible;
   color: white;
 }
@@ -72,6 +72,6 @@
   visibility: hidden;
 }
 
-.mainBlock:hover > .rate {
+.mainBlock:hover > .voteAverage {
   visibility: hidden;
 }
