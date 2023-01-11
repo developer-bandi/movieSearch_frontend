@@ -24,6 +24,7 @@ const PosterListContainer = () => {
   const changePage = (page) => {
     setPosterList({ loading: true, error: false });
     setPage(page);
+    window.scrollTo(0, 0);
   };
 
   return (
