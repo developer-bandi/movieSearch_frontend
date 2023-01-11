@@ -8,17 +8,9 @@
   margin: auto;
 }
 
-.logoBlock {
-  display: flex;
-  padding: 15px 0;
-}
-
-.logoIcon {
-  height: 30px;
-  margin: 0 10px 0 0;
-}
-
-.logoWord {
+.logo {
+  display: block;
   font-size: 28px;
   font-weight: 800;
+  padding: 15px 0;
 }
