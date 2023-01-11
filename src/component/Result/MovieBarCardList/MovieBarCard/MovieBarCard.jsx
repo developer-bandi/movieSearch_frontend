@@ -1,10 +1,10 @@
 /** @jsx h */
 import h from "../../../../../lib/react";
 import { Link } from "../../../../../lib/react-router-dom";
-import styles from "./Poster.module.css";
+import styles from "./MovieBarCard.module.css";
 import "../../../../img/nullmovie.webp";
 
-const Poster = ({ title, id, posterPath, rate, release }) => {
+const MovieBarCard = ({ title, id, posterPath, rate, release }) => {
   return (
     <div class={styles.mainBlock}>
       <Link class={styles.subBlock} href={`/detail/${id}`}>
@@ -32,4 +32,4 @@ const Poster = ({ title, id, posterPath, rate, release }) => {
   );
 };
 
-export default Poster;
+export default MovieBarCard;

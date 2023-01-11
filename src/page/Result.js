@@ -2,15 +2,15 @@
 import h from "../../lib/react";
 import Footer from "../component/common/Footer/Footer";
 import Header from "../component/common/Header/Header";
-import Keyword from "../component/Result/Keyword";
-import PosterListContainer from "../component/Result/PosterList/PosterListContainer";
+import KeywordContainer from "../component/Result/Keyword/KeywordContainer";
+import PosterListContainer from "../component/Result/MovieBarCardList/MovieBarCardListContainer";
 
 const Result = () => {
   return (
     <div>
       <Header />
       <main>
-        <Keyword />
+        <KeywordContainer />
         <PosterListContainer />
       </main>
       <Footer />

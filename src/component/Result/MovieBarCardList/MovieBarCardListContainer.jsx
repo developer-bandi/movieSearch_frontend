@@ -1,7 +1,7 @@
 /** @jsx h */
 import h, { useEffect, useState } from "../../../../lib/react";
 import { useQueries } from "../../../../lib/react-router-dom";
-import PosterList from "./PosterList";
+import PosterList from "./MovieBarCardList";
 
 const PosterListContainer = () => {
   const { keyword } = useQueries();
@@ -25,7 +25,7 @@ const PosterListContainer = () => {
     setPosterList({ loading: true, error: false });
     setPage(page);
   };
-  console.log(posterList);
+
   return (
     <PosterList posterList={posterList} changePage={changePage} page={page} />
   );

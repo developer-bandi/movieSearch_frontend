@@ -6,7 +6,6 @@ const PageNationContainer = ({
   page,
   changePage,
   totalAmount,
-  addStyle,
   pageUnit,
   contentUnit,
 }) => {
@@ -52,7 +51,6 @@ const PageNationContainer = ({
       page={page}
       changePage={changePage}
       totalAmount={totalAmount}
-      addStyle={addStyle}
       pageUnit={pageUnit}
       contentUnit={contentUnit}
     />

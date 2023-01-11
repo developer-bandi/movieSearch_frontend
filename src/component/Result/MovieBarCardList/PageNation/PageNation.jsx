@@ -6,7 +6,6 @@ const PageNation = ({
   page,
   changePage,
   totalAmount,
-  addStyle,
   pageUnit,
   contentUnit,
   allowPrevPageSet,

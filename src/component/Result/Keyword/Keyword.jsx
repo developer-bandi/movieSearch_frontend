@@ -1,10 +1,8 @@
 /** @jsx h */
-import h from "../../../lib/react";
-import { useQueries } from "../../../lib/react-router-dom";
+import h from "../../../../lib/react";
 import styles from "./Keyword.module.css";
 
-const Keyword = () => {
-  const { keyword } = useQueries();
+const Keyword = ({ keyword }) => {
   return (
     <div class={styles.mainBlock}>
       <div class={styles.content}>
