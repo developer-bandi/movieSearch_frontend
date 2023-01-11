@@ -1,8 +1,8 @@
 /** @jsx h */
 import h from "../../../../lib/react";
-import styles from "./DetailInfo.module.css";
+import styles from "./MovieArticleCard.module.css";
 
-const DetailInfo = ({ movieInfo }) => {
+const MovieArticleCard = ({ movieInfo }) => {
   if (movieInfo.loading) {
     return (
       <main class={styles.mainBlock}>
@@ -83,4 +83,4 @@ const DetailInfo = ({ movieInfo }) => {
   );
 };
 
-export default DetailInfo;
+export default MovieArticleCard;

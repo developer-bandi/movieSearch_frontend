@@ -2,9 +2,9 @@
 import h from "../../../../lib/react";
 import { useEffect, useState } from "../../../../lib/react";
 import { useParams } from "../../../../lib/react-router-dom";
-import DetailInfo from "./DetailInfo";
+import DetailInfo from "./MovieArticleCard";
 
-const DetailInfoContainer = () => {
+const MovieArticleCardContainer = () => {
   const [movieInfo, setMovieInfo] = useState({ loading: true, error: false });
   const { id } = useParams();
   useEffect(() => {
@@ -23,4 +23,4 @@ const DetailInfoContainer = () => {
   return <DetailInfo movieInfo={movieInfo} />;
 };
 
-export default DetailInfoContainer;
+export default MovieArticleCardContainer;
