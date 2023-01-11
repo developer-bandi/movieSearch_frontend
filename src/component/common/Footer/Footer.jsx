@@ -10,7 +10,7 @@ const Footer = () => {
       <div class={styles.subBlock}>
         <div class={styles.infoBlock}>
           <div class={styles.logoBlock}>
-            <img class={styles.logoIcon} src="./icon.png"></img>
+            <img class={styles.logoIcon} src="/icon.png"></img>
             <div class={styles.logoWord}>MovieSearch</div>
           </div>
           <a
@@ -35,7 +35,7 @@ const Footer = () => {
         </div>
         <div class={styles.contactBlock}>
           <a target="_black" href="https://github.com/puki4416">
-            <img class={styles.logoIcon} src="./github.png"></img>
+            <img class={styles.logoIcon} src="/github.png"></img>
           </a>
         </div>
       </div>

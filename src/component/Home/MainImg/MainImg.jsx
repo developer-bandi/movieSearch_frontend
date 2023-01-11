@@ -6,7 +6,7 @@ import "../../../img/main.png";
 const MainImg = () => {
   return (
     <div class={styles.mainBlock}>
-      <img src="./main.png" class={styles.img}></img>
+      <img src="/main.png" class={styles.img}></img>
     </div>
   );
 };

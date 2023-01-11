@@ -8,7 +8,7 @@ const Header = () => {
     <header class={styles.mainBlock}>
       <div class={styles.subBlock}>
         <div class={styles.logoBlock}>
-          <img class={styles.logoIcon} src="./icon.png"></img>
+          <img class={styles.logoIcon} src="/icon.png"></img>
           <div class={styles.logoWord}>MovieSearch</div>
         </div>
       </div>
