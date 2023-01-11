@@ -8,7 +8,7 @@ const MovieBarCardList = ({ posterList, changePage, page }) => {
   if (posterList.loading) {
     return (
       <div class={styles.mainBlock}>
-        {new Array(10).fill(0).map(() => {
+        {new Array(20).fill(0).map(() => {
           return (
             <div class={styles.loadingPosterBlock}>
               <div class={styles.loadingPoster}></div>
@@ -48,9 +48,8 @@ const MovieBarCardList = ({ posterList, changePage, page }) => {
       <PageNationContainer
         page={page}
         changePage={changePage}
-        totalAmount={posterList.content.totalPage * 20}
+        totalPage={posterList.content.totalPage}
         pageUnit={5}
-        contentUnit={20}
       />
     </div>
   );

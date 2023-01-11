@@ -5,29 +5,25 @@ import styles from "./PageNation.module.css";
 const PageNation = ({
   page,
   changePage,
-  totalAmount,
-  pageUnit,
-  contentUnit,
   allowPrevPageSet,
-  makePrevSetPage,
+  movePrevPageSet,
   makePages,
   allowNextPageSet,
-  makeNextSetPage,
+  moveNextPageSet,
 }) => {
   return (
     <ul class={styles.pageButtonList}>
       <li key={"prev"}>
         <div
-          class={`${styles.pageIcon} ${page > 5 ? "" : styles.ban}`}
+          class={`${styles.pageIcon} ${allowPrevPageSet() ? "" : styles.ban}`}
           onClick={() => {
-            if (allowPrevPageSet({ page, pageUnit }))
-              changePage(makePrevSetPage({ page, pageUnit }));
+            if (allowPrevPageSet()) movePrevPageSet();
           }}
         >
           &lt;
         </div>
       </li>
-      {makePages({ page, totalAmount, contentUnit, pageUnit }).map((cur) => {
+      {makePages().map((cur) => {
         return (
           <li
             class={`${styles.pageButton} ${
@@ -44,14 +40,9 @@ const PageNation = ({
       })}
       <li key={"next"}>
         <div
-          class={`${styles.pageIcon} ${
-            allowNextPageSet({ page, totalAmount, contentUnit, pageUnit })
-              ? ""
-              : styles.ban
-          }`}
+          class={`${styles.pageIcon} ${allowNextPageSet() ? "" : styles.ban}`}
           onClick={() => {
-            if (allowNextPageSet({ page, totalAmount, contentUnit, pageUnit }))
-              changePage(makeNextSetPage({ page, pageUnit }));
+            if (allowNextPageSet()) moveNextPageSet();
           }}
         >
           &gt;
