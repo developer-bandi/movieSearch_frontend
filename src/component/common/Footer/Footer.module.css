@@ -19,16 +19,7 @@
   flex-grow: 1;
 }
 
-.logoBlock {
-  display: flex;
-}
-
-.logoIcon {
-  height: 30px;
-  margin: 0 10px 0 0;
-}
-
-.logoWord {
+.logo {
   font-size: 28px;
   font-weight: 800;
   color: black;
@@ -37,4 +28,9 @@
 .contactBlock {
   display: flex;
   align-items: flex-end;
+}
+
+.icon {
+  height: 30px;
+  margin: 0 10px 0 0;
 }

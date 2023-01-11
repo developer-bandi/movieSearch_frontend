@@ -1,7 +1,6 @@
 /** @jsx h */
 import h from "../../../../lib/react";
 import styles from "./Footer.module.css";
-import "../../../img/icon.png";
 import "../../../img/github.png";
 
 const Footer = () => {
@@ -9,10 +8,7 @@ const Footer = () => {
     <footer class={styles.mainBlock}>
       <div class={styles.subBlock}>
         <div class={styles.infoBlock}>
-          <div class={styles.logoBlock}>
-            <img class={styles.logoIcon} src="/icon.png"></img>
-            <div class={styles.logoWord}>MovieSearch</div>
-          </div>
+          <div class={styles.logo}>MovieSearch</div>
           <a
             href="https://www.flaticon.com/free-icons/watching-a-movie"
             title="watching a movie icons"
@@ -35,7 +31,7 @@ const Footer = () => {
         </div>
         <div class={styles.contactBlock}>
           <a target="_black" href="https://github.com/puki4416">
-            <img class={styles.logoIcon} src="/github.png"></img>
+            <img class={styles.icon} src="/github.png"></img>
           </a>
         </div>
       </div>
