@@ -30,6 +30,13 @@ const MovieBarCardList = ({ posterList, changePage, page }) => {
       </div>
     );
   }
+  if (posterList.content.results.length === 0) {
+    return (
+      <div class={styles.mainBlock}>
+        <div class={styles.error}>결과가 없습니다</div>
+      </div>
+    );
+  }
   return (
     <div class={styles.mainBlock}>
       {posterList.content.results.map(
