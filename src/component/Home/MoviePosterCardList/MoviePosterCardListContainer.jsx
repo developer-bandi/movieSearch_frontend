@@ -9,7 +9,7 @@ const MoviePosterCardListContainer = () => {
   const [cardList, setCardList] = useState({ loading: true, error: false });
   useEffect(() => {
     if (cardList.loading) {
-      fetch(`http://localhost:8000/home`)
+      fetch(`https://movieinfoserver.herokuapp.com/home`)
         .then((response) => response.json())
         .then((data) => {
           setCardList({ loading: false, error: false, content: data });

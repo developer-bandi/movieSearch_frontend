@@ -9,7 +9,7 @@ const MovieArticleCardContainer = () => {
   const { id } = useParams();
   useEffect(() => {
     if (movieInfo.loading) {
-      fetch(`http://localhost:8000/detail?id=${id}`)
+      fetch(`https://movieinfoserver.herokuapp.com/detail?id=${id}`)
         .then((response) => response.json())
         .then((data) => {
           setMovieInfo({ loading: false, error: false, content: data });

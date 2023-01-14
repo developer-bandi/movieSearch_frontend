@@ -10,7 +10,9 @@ const PosterListContainer = () => {
 
   useEffect(() => {
     if (posterList.loading) {
-      fetch(`http://localhost:8000/search?keyword=${keyword}&page=${page}`)
+      fetch(
+        `https://movieinfoserver.herokuapp.com/search?keyword=${keyword}&page=${page}`
+      )
         .then((response) => response.json())
         .then((data) => {
           setPosterList({ loading: false, error: false, content: data });
