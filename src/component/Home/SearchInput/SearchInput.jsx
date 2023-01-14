@@ -10,6 +10,7 @@ const SearchInput = ({ searchMovie }) => {
           id="search"
           class={styles.input}
           placeholder="원하는 영화를 검색해보세요"
+          onKeyDown={searchMovie}
         ></input>
         <button class={styles.button} onClick={searchMovie}>
           검색
