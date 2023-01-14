@@ -1,7 +1,7 @@
 {
-  "name": "vanliaspa",
+  "name": "moviesearch",
   "version": "0.0.1",
-  "description": "spa library using vanila javascript",
+  "description": "바닐라 자바스크립트를 이용하여 라이브러리를 만든후 제작한 영화 검색 프로젝트입니다",
   "main": "index.js",
   "scripts": {
     "start": "webpack serve"
