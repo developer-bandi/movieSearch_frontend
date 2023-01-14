@@ -13,6 +13,10 @@ const MoviePosterCardListContainer = () => {
         .then((response) => response.json())
         .then((data) => {
           setCardList({ loading: false, error: false, content: data });
+          data.forEach(({ posterPath }) => {
+            const image = new Image();
+            image.src = `https://image.tmdb.org/t/p/w500${posterPath}`;
+          });
         })
         .catch(() => {
           setCardList({ loading: false, error: true });
