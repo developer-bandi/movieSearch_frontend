@@ -2,6 +2,7 @@ const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   mode: "development",
@@ -50,10 +51,15 @@ module.exports = {
       banner: `빌드 날짜: ${new Date().toLocaleString()}`,
     }),
     new HtmlWebpackPlugin({
-      template: "./index.html",
+      template: "./public/index.html",
       favicon: "./src/img/icon.png",
     }),
     new CleanWebpackPlugin(),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: "./public/_redirects", to: path.join(__dirname, "build") },
+      ],
+    }),
   ],
   devServer: {
     static: {
