@@ -1,6 +1,6 @@
 # MovieSearch
 
-[MovieSearch 사이트 바로가기]()
+[MovieSearch 사이트 바로가기](https://melodic-gelato-3b6088.netlify.app/)
 
 vanilla javascript 와 webpack, babel 을 이용하여 react,redux,react-redux,react-router-dom 의 주요기능을 구현한뒤, 해당 기능을 바탕으로 간단한 영화 검색 사이트를 구현하였습니다.
 
