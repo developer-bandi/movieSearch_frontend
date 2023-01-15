@@ -30,7 +30,10 @@ const Footer = () => {
           <div>Copyright 2023. 김상두 all right reserved</div>
         </div>
         <div class={styles.contactBlock}>
-          <a target="_black" href="https://github.com/puki4416">
+          <a
+            target="_black"
+            href="https://github.com/puki4416/movieSearch_frontend"
+          >
             <img class={styles.icon} src="/github.png" alt="깃허브 로고"></img>
           </a>
         </div>
