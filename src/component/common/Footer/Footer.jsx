@@ -27,7 +27,7 @@ const Footer = () => {
           >
             Github icons created by Pixel perfect - Flaticon
           </a>
-          <div>Copyright 2022. 김상두 all right reserved</div>
+          <div>Copyright 2023. 김상두 all right reserved</div>
         </div>
         <div class={styles.contactBlock}>
           <a target="_black" href="https://github.com/puki4416">
