@@ -10,11 +10,12 @@ const MovieBarCard = ({ title, id, posterPath, rate, release }) => {
       <Link class={styles.subBlock} href={`/detail/${id}`}>
         <img
           class={styles.posterBlock}
-          src={
+          data-src={
             posterPath
-              ? `https://image.tmdb.org/t/p/w500${posterPath}`
+              ? `https://image.tmdb.org/t/p/w185${posterPath}`
               : "./nullmovie.webp"
           }
+          id={`image${id}`}
           alt={`영화 ${title} 포스터`}
         ></img>
         <div class={styles.infoBlock}>

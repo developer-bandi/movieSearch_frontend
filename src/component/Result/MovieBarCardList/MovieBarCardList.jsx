@@ -1,8 +1,8 @@
 /** @jsx h */
 import h from "../../../../lib/react";
 import PageNationContainer from "./PageNation/PageNationContainer";
-import MovieBarCard from "./MovieBarCard/MovieBarCard";
 import styles from "./MovieBarCardList.module.css";
+import MovieBarContainer from "./MovieBarCard/MovieBarContainer";
 
 const MovieBarCardList = ({ posterList, changePage, page }) => {
   if (posterList.loading) {
@@ -42,7 +42,7 @@ const MovieBarCardList = ({ posterList, changePage, page }) => {
       {posterList.content.results.map(
         ({ title, id, posterPath, rate, release }) => {
           return (
-            <MovieBarCard
+            <MovieBarContainer
               title={title}
               id={id}
               posterPath={posterPath}
