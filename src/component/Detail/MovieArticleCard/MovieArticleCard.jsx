@@ -1,6 +1,7 @@
 /** @jsx h */
 import h from "../../../../lib/react";
 import styles from "./MovieArticleCard.module.css";
+import "../../../img/nullmovie.webp";
 
 const MovieArticleCard = ({ movieInfo }) => {
   if (movieInfo.loading) {
@@ -52,7 +53,7 @@ const MovieArticleCard = ({ movieInfo }) => {
           src={
             posterPath
               ? `https://image.tmdb.org/t/p/w500${posterPath}`
-              : "./nullmovie.webp"
+              : "https://melodic-gelato-3b6088.netlify.app/nullmovie.webp"
           }
           alt={`영화 ${title} 포스터`}
         ></img>

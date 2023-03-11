@@ -2,6 +2,7 @@
 import h from "../../../../../lib/react";
 import { Link } from "../../../../../lib/react-router-dom";
 import styles from "./MoviePosterCard.module.css";
+import "../../../../img/nullmovie.webp";
 
 const MoviePosterCard = ({ card }) => {
   return (
