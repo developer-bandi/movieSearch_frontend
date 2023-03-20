@@ -1,79 +1,68 @@
-# MovieSearch
+<h2 align=center > 원하는 영화를 검색해보자 - MovieSearch 🎬 </h2>
+<img src="https://user-images.githubusercontent.com/102564722/226234456-dabdea65-e4f4-4c07-a8fd-fe8520b1fb14.png"/>
+<br></br>
+<div align=center>
+    <img src="https://img.shields.io/badge/5.74.0-Webpack-8DD6F9?style=flat&logo=webpack&logoColor=8DD6F9"/>
+        <img src=" https://img.shields.io/badge/7.15.0-babel-F9DC3E.svg?style=flat&logo=babel&logoColor=yellow"/>
 
-[MovieSearch 사이트 바로가기](https://melodic-gelato-3b6088.netlify.app/)
+</div>
 
-vanilla javascript 와 webpack, babel 을 이용하여 react,redux,react-redux,react-router-dom 의 주요기능을 구현한뒤, 해당 기능을 바탕으로 간단한 영화 검색 사이트를 구현하였습니다.
+<p align=center> 🏠 <a href=https://melodic-gelato-3b6088.netlify.app>홈페이지 바로가기</a></p>
 
-## 1. 실행 방법
+<div></div>
 
+<h2>1. 프로젝트 소개</h2>
+react의 기능을 vanilla javascript만 이용해서 직접 구현해봄으로써 동작원리를 좀더 깊이있게 이해하기 위해 만들게된 프로젝트입니다.  webpack, babel 만을 이용하여 개발환경을 구축한뒤, react, redux, react-redux, react-router-dom 의 주요기능을 구현하고 이를 이용해 간단한 영화검색 사이트를 만들었습니다.
+
+<h2>2. 실행방법</h2>
+
+- 원하는 폴더에 이 저장소를 git clone "저장소의 주소"를 입력하여 코드를 복사합니다.
 - 터미널에 npm i 를 입력하여 패키지 파일을 설치합니다
 - 터미널에 npm start 를 입력하여 개발서버를 실행해 웹페이지를 살펴볼수 있습니다.
 
-## 2.페이지 기능
+<h2>3. 주요기능</h2>
 
-- home: 원하는 영화를 검색하고 최근 영화순위를 볼수있는 기능
-- result: home에서 검색한 결과를 볼수있는 기능
-- detail: home이나 result 에서 영화 card를 클릭하였을때 영화 상세정보를 볼수 있는 기능
+- home: 원하는 영화를 검색하고 최근 영화순위를 볼수있는 기능이 있습니다.
+- result: home에서 검색한 결과를 볼수있는 기능이 있습니다
+- detail: home이나 result 에서 영화 card를 클릭하였을때 영화 상세정보를 볼수 있는 기능이 있습니다
 
-## 3. 라이브러리별 소개
+## 3. 라이브러리 api 소개
 
 ### react
 
-렌더링의 경우 먼저 render 함수를 이용하여 rootComponent와 rootdom, rootComponent를 실행한 가상돔을 등록한뒤 첫 렌더링을 하게 됩니다. 렌더링이후 리렌더링 하게 되면, rootComponent를 실행해 새로운 가상돔을 만들고 이전가상돔과 비교한뒤 필요한 부분만 변경하여 ui를 업데이트 합니다. 비교할때 같은 태그의 경우 속성을 변경해주었고, 다른태그의경우 아예제거한뒤 새롭게 요소를 만들어주는 방식을 사용하였습니다. 이벤트의경우 react 와 유사하게 rootdom에 위임하였고, 노드가 단순히 삭제되는경우 이벤트가 제거되지 않을수 있어 등록이벤트들의 요소가 남아있는지를 매 렌더링마다 조회하여 제거하는 로직으로 구현하였습니다. 한편 requestAnimationFrame함수를 사용하여 1프레임 동안 1번만 실행되도록(60fps 기준 약 16ms당 1회)하여 효율적으로 렌더링 되도록 하였습니다.
-
-useState의 경우 처음 값을 세팅할때는 값을 초기값을 저장하게 되므로, 값을 배열에 추가해주고, 이후 리렌더링할때는 값을 변경할수 있도록 index값을 참조하였습니다. 또한 해당 함수의 실행결과 state 와 setState를 담은 배열을 반환해 setState로 state를 변경하고 rerender 할수있도록 구현하였습니다.
-
-useLookup의 경우 dom요소를 직접 조작할수는 없고 탐색할수 있도록 구현한 hook 이고 useEffect는 렌더링직후 부수효과를 처리하도록 구현하였으며 useContext 와 createContext 전역 상태를 유지하기위한 함수들입니다.
-
-### redux, react-redux
-
-redux는 createStore라는 하나의 함수를 export 합니다. 해당함수는 reducer함수를 받고, 해당함수를 초기화 액션을 넣어 상태를 초기화한뒤, dispatch, getState,subscribe 함수를 리턴하여 상태를 변경하고, 조회하고 상태를 구독할수있도록 하였습니다. 이함수들을 이용하여 상태가 변경되면 구독하는 개체들이 의도한 함수를 실행할수 있고 데이터가 dispatch->reducer->store->view->dispatch 의 단방향으로 이동할수 있게 되어 observer 패턴과 flux 패턴이 적용되었다고 볼수 있습니다.
-
-react와 redux를 연결하는 react-redux는 useSelector와 useDispatch 훅을 가집니다. useSelector은 사용한 컴포넌트를 구독하고 상태도 가져올수 있게 하고, 구독함수로 리렌더링 함수를 보내어서 상태가 변경되면 자동으로 리렌더링됩니다. useDispatch의 경우 store의 dispatch 함수를 리턴하여 view에서 action을 dispatch 할수 있도록 해줍니다.
+- h : babel이 jsx를 어떤 방식으로 변환할지 결정하는 함수
+- reRender : 리렌더링시 동작하는 함수로 react-router-dom같은 외부 라이브러리에서 리렌더링을 발생시킬때 사용하는 함수
+- render : 초기 렌더링 상태를 세팅하고 마운트 하는 함수
+- createContext : context 스토어에 정보를 저장하는 함수
+- useContext : context 스토어의 정보를 조회하여 전역데이터를 볼수 있는 함수
+- useEffect : 부수효과를 처리하기 위해 사용가능한 함수
+- useLookup : dom요소를 직접 참조하기 위한 함수
 
 ### react-router-dom
 
-routes와 route함수를 이용하여 주어진 경로와 컴포넌트를 등록합니다. 이때 /:id 와같은 parameter를 등록하기위해서 정규표현식을 이용하여 검사하게 됩니다. 만약 주소창이 변경되거나 data-link 속성의 a 태그가 클릭될경우 새로고침하지않고 path에 맞는 컴포넌트를 리턴하여 리렌더링 하도록 하였습니다.
+- Routes : Route 함수의 상위에서 spa를 위한 세팅을 하는 함수
+- Route : 입력된 path 와 element를 저장하는 함수
+- Link : spa 이동을 할수 있는 a태그를 만들어주는 함수
+- useParams : route입력시 변수로 입력한 파라미터를 알려주는 함수
+- useQueries : 주소창의 query를 알려주는 함수
+- useRouter : spa 이동을 할수 있는 push 메서드를 가진 객체를 반환하는 함수
 
-link 태그의 경우 react-router-dom 처럼 link를 달기위한 hook입니다. 이 link 태그아래에 텍스트 자식노드가 아닌 html 요소가 있는 경우 해당 요소로 가려짐으로써 link가 정상적으로 동작하지 않아서 재귀적으로 모든 자식노드를 data-link 속성과 href를 부착한 노드로 변경하는 기능을 가지고 있습니다.
+### redux
 
-useParams 는 parameter을 가져오는 hook 이고 useQuries는 query를 가져오는 hook 이고 useRouter는 라우팅을 사용할수 있도록 router 객체를 리턴하는 hook 입니다.
+- createStore :redux 스토어를 만드는 함수로 상태를 변화시키는 dispatch, 상태를 얻을수 있는 getState, 구독할수 있는 subscribe 메서드를 가진 객체를 리턴합니다.
 
-## 4.주요 구현 내용
+### react-redux
 
-### webpack 과 babel
+- useSelector : 해당 컴포넌트(실질적으로 전체 컴포넌트)를 구독하고 해당하는 상태를 반환해주는 함수
+- useDispatch : dispatch를 할수 있도록 createStore의 dispatch 함수를 반환해 주는 함수
 
-개발서버와 배포시 최적화를 위해 webpack을, jsx를 위해 babel 을 이용하였습니다.
+## 4. 관련 블로그 포스트
 
-### requestAnimationFrame api
-
-react 라이브러리의 setState함수가 비동기적으로 16.6ms 에 한번 변화를 모아 처리한다는 사실을 반영하기위해서 일종의 debounce를 적용하였습니다. 처음에는 setInterval로 적용하였는데, 해당함수가 정확한 16.6ms를 보장하지 않는 반면 requestAnimationFrame api는 정확한 16.6ms 즉 1프레임을 보장하기에 이를 이용해 변화를 모아서 처리하는 구조를 구현하였습니다.
-
-### 이벤트 위임
-
-직접 라이브러리를 만들때 가장 어려웠던 부분이 이벤트를 처리하는 것이었습니다. 따라서 생각해낸 방법이 이벤트를 요소에 등록하되, 등록된 모든 이벤트를 요소/함수 형태로 저장해두고, 요소가 삭제될때마다 모든 이벤트를 검사해 요소가 dom 노드에 없는경우 함수를 삭제해버리는 방식이었습니다. 이렇게 구현하고나니 이벤트 위임을 적용하기 유용할것 같다는 생각이 들었습니다. 따라서 이벤트를 요소에 등록하지 않고 root에 등록한뒤 이벤트가 발생하면 타겟 요소와 저장된 이벤트들을 조사하여 매치되는 함수를 실행하는 방식으로 이벤트 위임을 구현하였습니다.
-
-### pre loading
-
-홈의 포스터를 보여주는 캐러셀이 처음 로드이후 페이지전환시 이전 이미지가 잠시동안남아있다가 변경되는 이슈가 있었습니다. 확인해보니 이미지가 초기에 로딩되지 않고 이후 로딩되면서 이전이미지가 대체이미지 역할을 하고있음을 알게되었고, Image 객체를 이용해 pre loading을 적용하여 미리 이후 페이지의 이미지를 로딩함으로써 해결할수 있었습니다.
-
-### lazy loading
-
-영화 정보 페이지다 보니 아무래도 포스터를 담당하는 이미지가 많았습니다. 특히 결과 페이지는 결과가 화면에 보이는것보다 3배이상의 길이를 가지는데, 모든 이미지를 로드하고 있었으므로, 스크롤 아래의 이미지는 이후 로드하여도 무방하다고 생각하였습니다. 따라서 intersection observer를 이용해 lazy loading을 적용하였고 결과적으로 로드시간을 약 2초정도 줄일수 있었습니다.
-
-## 4.아쉬운점
-
-### 변경되는 컴포넌트 알아내기
-
-가상돔끼리 비교할때, 현재 로직상으로는 무조건 root노드를 기준으로 비교하게 된다. 하지만, 만약 root노드의 자식 컴포넌트가 변경되었을경우, 사실 해당 컴포넌트부터 아래 자식 컴포넌트들 끼리, 즉 일부 컴포넌트만 비교해도 충분하다. 이를 위해서는 변경이 발생했을때, 어떤 컴포넌트가 변경되었는지를 알수 있어야 하는데, 변경되는 컴포넌트를 알수있는 방법이 없어서 아쉬웠습니다. 추후 업데이트시에는 react 라이브러리를 열어보고 컴포넌트 변경을 감지하는 로직을 구현해볼 생각입니다.
-
-### key 적용
-
-react 에서 가상돔 끼리의 비교의 시간복잡도를 줄이기위해서 몇가지 휴리스틱 알고리즘을 구현하고있다. 대부분은 적용하였으나, key를 이용하여 순서와 상관없이 요소가 변경되었는지 여부를 판별하는 알고리즘을 적용하지는 못했습니다. 추후 업데이트할때 해당 부분을 가상돔 비교로직에 포함해볼 계획입니다.
-
-### 의존성 배열
-
-useEffect에서 로직을 처리할때 중요한 부분은 언제 해당 로직이 실행되는가 입니다. 이것을 처리하는 방식은 의존성 배열의 값이 달리지게 되면 변경되게 하는 식으로 처리할수 있습니다. 이를 위해서는 의존성 배열의 값을 저장해두고 매 렌더링 마다 해당 값들을 비교해야합니다. 이전값을 저장해두는것에 대한 고민이 필요하여 아직 구현하지 못했지만 추후 업데이트시 포함해볼 계획입니다.
+- [webpack 과 babel을 이용하여 개발환경 구성하기](https://velog.io/@dujk68/webpack-%EA%B3%BC-babel%EC%9D%84-%EC%9D%B4%EC%9A%A9%ED%95%98%EC%97%AC-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%84%B8%ED%8C%85%ED%95%98%EA%B8%B0)
+- [requestAnimationFrame api를 이용하여 변화를 모아 처리하기](https://velog.io/@dujk68/requestAnimationFrame-api-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0)
+- [이벤트 위임이 자동적으로 적용되도로 구현하기](https://velog.io/@dujk68/react-%EC%97%90%EC%84%9C-%EC%9D%B4%EB%B2%A4%ED%8A%B8%EB%A5%BC-%EC%B2%98%EB%A6%AC%ED%95%98%EB%8A%94-%EB%B0%A9%EC%8B%9D)
+- [lazy loading을 적용하여 초기 로드시간 단축하기](https://velog.io/@dujk68/lazy-loading%EC%9D%84-%EC%A0%81%EC%9A%A9%ED%95%98%EC%97%AC-%EC%B4%88%EA%B8%B0-%EB%A1%9C%EB%93%9C%EC%8B%9C%EA%B0%84-%EA%B0%9C%EC%84%A0%ED%95%98%EA%B8%B0)
+- [pre loading을 적용하여 lazy loading으로 인한 문제 해결하기](https://velog.io/@dujk68/pre-loading%EC%9C%BC%EB%A1%9C-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EB%A0%8C%EB%8D%94%EB%A7%81-%EA%B0%9C%EC%84%A0%ED%95%98%EA%B8%B0)
 
 ## 5.참고자료
 
